@@ -33,6 +33,10 @@ function App() {
       alert("Please enter a valid todo");
       return;
     }
+    if (input.length < 3) {
+      alert("Please enter a valid todo");
+      return;
+    }
     await addDoc(collection(db, "todos"), {
       text: input,
       completed: false,
@@ -101,3 +105,5 @@ function App() {
 }
 
 export default App;
+
+// git commit -m "add input length check"
